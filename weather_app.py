@@ -21,8 +21,17 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-import requests
-from dotenv import load_dotenv
+try:
+    import requests
+    from dotenv import load_dotenv
+except ModuleNotFoundError as exc:
+    # Зависимости не установлены — вместо трейсбека объясняем, что делать.
+    raise SystemExit(
+        f"Не хватает библиотеки «{exc.name}».\n"
+        "Установите зависимости и запустите снова:\n"
+        "  python -m pip install -r requirements.txt\n"
+        "Или запустите run.cmd — он сам создаст venv и поставит зависимости."
+    ) from None
 
 # --- Настройки -------------------------------------------------------------
 
@@ -65,8 +74,8 @@ class WeatherUnavailableError(WeatherError):
 
 
 def _api_key() -> str:
-    """Вернуть ключ из окружения или объяснить, как его добавить."""
-    key = (API_KEY or os.getenv("API_KEY") or "").strip()
+    """Вернуть ключ, загруженный из .env, или объяснить пользователю, что делать."""
+    key = (API_KEY or "").strip()
     if not key:
         raise WeatherError(
             "Не найден API-ключ OpenWeather.\n"
