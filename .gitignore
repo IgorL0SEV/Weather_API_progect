@@ -1,0 +1,16 @@
+# Секреты — только локально
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+pytest_cache/
+
+# Среда разработки
+.vscode/
+.idea/
+
+# Данные, которые создаются во время работы
+weather_cache.json
