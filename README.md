@@ -186,4 +186,18 @@ python -m unittest discover -s tests -v
 
 ## Репозиторий
 
-GitHub: <!-- ссылка появится после публикации -->
+GitHub: https://github.com/IgorL0SEV/Weather_API_progect
+
+Клонирование и запуск:
+
+```powershell
+git clone https://github.com/IgorL0SEV/Weather_API_progect.git
+cd Weather_API_progect
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+"API_KEY=ваш_ключ" | Out-File -Encoding utf8 .env
+python weather_app.py
+```
+
+Или просто двойной клик по `run.cmd`.

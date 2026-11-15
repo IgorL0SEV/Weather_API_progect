@@ -19,7 +19,7 @@
 | 13 | Проверка в чистом venv: тесты + запуск без ключа | ✅ |
 | 14 | Живой запуск с настоящим ключом: Москва и Санкт-Петербург по координатам, пример в README | ✅ |
 | 15 | Запуск в один клик `run.cmd` (venv + зависимости) и раздел «Если что-то не работает» | ✅ |
-| 16 | Сдача: опубликовать репозиторий на GitHub | ⏳ |
+| 16 | Сдача: опубликовать репозиторий на GitHub | ✅ [Weather_API_progect](https://github.com/IgorL0SEV/Weather_API_progect) |
 
 ## Предусловия
 
@@ -32,7 +32,7 @@
 
 ```powershell
 cd D:\python-projects
-git clone <адрес-репозитория> Weather_API_progect
+git clone https://github.com/IgorL0SEV/Weather_API_progect.git Weather_API_progect
 cd Weather_API_progect
 python -m venv venv
 .\venv\Scripts\Activate.ps1
